@@ -1,7 +1,7 @@
 package com.ust.bankLocker.service;
 
 import com.ust.bankLocker.datatypes.CreateUser;
-import com.ust.bankLocker.model.User;
+import com.ust.bankLocker.model.Users;
 import com.ust.bankLocker.model.UserCredentials;
 import com.ust.bankLocker.repository.UserCredentialRespository;
 import com.ust.bankLocker.repository.UserRepository;
@@ -26,16 +26,16 @@ public class UserService {
         this.userCredentialRespository = userCredentialRespository;
     }
 
-    public User createUser(CreateUser createUser) {
-        User user = new User();
+    public Users createUser(CreateUser createUser) {
+        Users users = new Users();
 
-        user.setLoginId(createUser.getLoginId());
-        user.setName(createUser.getName());
-        user.setEmail(createUser.getEmail());
-        user.setAddress(createUser.getAddress());
-        user.setPhone(createUser.getPhone());
+        users.setLoginId(createUser.getLoginId());
+        users.setName(createUser.getName());
+        users.setEmail(createUser.getEmail());
+        users.setAddress(createUser.getAddress());
+        users.setPhone(createUser.getPhone());
 
-        User temp = userRepository.save(user);
+        Users temp = userRepository.save(users);
 
         UserCredentials creds = new UserCredentials();
 
@@ -46,13 +46,13 @@ public class UserService {
         return temp;
     }
 
-    public User getUser(String loginId) {
-        Optional<User> temp = userRepository.findByLoginId(loginId);
+    public Users getUser(String loginId) {
+        Optional<Users> temp = userRepository.findByLoginId(loginId);
 
         return temp.orElse(null);
     }
 
-    public List<User> getAllUsers() {
+    public List<Users> getAllUsers() {
         return userRepository.findAll();
     }
 }

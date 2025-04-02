@@ -2,7 +2,6 @@ package com.ust.bankLocker.service;
 
 import com.ust.bankLocker.datatypes.CreateUser;
 import com.ust.bankLocker.datatypes.Login;
-import com.ust.bankLocker.model.User;
 import com.ust.bankLocker.model.UserCredentials;
 import com.ust.bankLocker.repository.UserCredentialRespository;
 import org.springframework.beans.factory.annotation.Autowired;

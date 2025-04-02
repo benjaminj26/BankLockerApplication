@@ -1,12 +1,12 @@
 package com.ust.bankLocker.repository;
 
-import com.ust.bankLocker.model.User;
+import com.ust.bankLocker.model.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
-    Optional<User> findByLoginId(String loginId);
+public interface UserRepository extends JpaRepository<Users, Long> {
+    Optional<Users> findByLoginId(String loginId);
 }

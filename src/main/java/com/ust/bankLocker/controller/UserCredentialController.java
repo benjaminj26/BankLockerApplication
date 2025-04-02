@@ -1,7 +1,7 @@
 package com.ust.bankLocker.controller;
 
 import com.ust.bankLocker.datatypes.Login;
-import com.ust.bankLocker.model.User;
+import com.ust.bankLocker.model.Users;
 import com.ust.bankLocker.service.UserCredentialService;
 import com.ust.bankLocker.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ public class UserCredentialController {
     }
 
     @PostMapping
-    public ResponseEntity<User> userLogin(@RequestBody Login login) {
+    public ResponseEntity<Users> userLogin(@RequestBody Login login) {
         if (userCredentialService.isAuthorised(login)) {
             return ResponseEntity.ok().body(userService.getUser(login.getLoginId()));
         } else {

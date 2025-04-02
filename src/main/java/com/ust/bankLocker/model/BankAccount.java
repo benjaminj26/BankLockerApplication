@@ -17,7 +17,7 @@ public class BankAccount {
 
     @ManyToOne
     @JsonBackReference
-    private User user;
+    private Users users;
 
     public String getAccountNumber() {
         return accountNumber;
@@ -51,11 +51,11 @@ public class BankAccount {
         this.acoountType = acoountType;
     }
 
-    public User getUser() {
-        return user;
+    public Users getUser() {
+        return users;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(Users users) {
+        this.users = users;
     }
 }

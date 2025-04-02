@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class User {
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
@@ -23,11 +23,11 @@ public class User {
     private String phone;
     private String address;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "users")
     @JsonManagedReference
     private List<BankAccount> bankAccounts;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "users")
     @JsonManagedReference
     private List<BankLocker> bankLockers;
 

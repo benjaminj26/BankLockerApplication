@@ -13,7 +13,7 @@ public class BankLocker {
 
     @ManyToOne
     @JsonBackReference
-    private User user;
+    private Users users;
 
     public Long getLockerId() {
         return lockerId;
@@ -23,12 +23,12 @@ public class BankLocker {
         this.lockerId = lockerId;
     }
 
-    public User getUser() {
-        return user;
+    public Users getUser() {
+        return users;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(Users users) {
+        this.users = users;
     }
 
     public boolean isAvailable() {
